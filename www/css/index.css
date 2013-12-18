@@ -113,3 +113,40 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+body{
+	background-color: #F1EFE2;
+}
+.table1{
+	width:100%;
+	border:1px groove black;
+	border-radius:4px;
+	text-align:center;
+	background-color:#206BA4;
+	color:#948CF1;
+}
+.td1{
+	border-left:3px solid #D45559;
+}
+#info{
+	width:100%;
+	height:500px;
+	background-color:#F1EFE2;
+	color:#D45559;
+	margin:auto;
+	overflow:scroll;
+}
+
+#titre{
+	font-family: Arial;
+	text-align:center;
+	color:#206BA4;
+}
+h3{
+	font-family: Arial;
+	text-align:center;
+}
+a{
+	text-decoration:none;
+	color:#2B2F3E;
+	
+}
