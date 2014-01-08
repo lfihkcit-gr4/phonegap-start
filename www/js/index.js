@@ -46,4 +46,18 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+	
+alert("Hello World!");
+
+x=Math.floor(Math.random() * 255) + 1
+
+y=Math.floor(Math.random() * 255) + 1
+
+z=Math.floor(Math.random() * 255) + 1
+
+alert(x)
+alert(y)
+alert(z)
+
+var color = (x,y,z)
 };
