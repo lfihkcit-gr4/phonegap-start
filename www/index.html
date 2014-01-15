@@ -1,39 +1,56 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+       
+                <script>
+                        // XML PARSER cf. http://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
+                        function xmlparser()
+                        {
+                                var xmlhttp, xml_data, items, content;
+                                xmlhttp=new XMLHttpRequest();
+                                xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=fr-fr", true);
+                                //xmlhttp.open("GET", "xmlfile.xml", true);
+                                xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
+                                xmlhttp.onreadystatechange=function()
+                                {
+                                        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                                        {
+                                                xml_data = xmlhttp.responseXML;
+                                                items = xml_data.getElementsByTagName("item");
+                                                
+                                                content = '';
+                                                for (i=0;i<items.length;i++)
+                                                        { 
+                                                        content = content + '<h1 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</h1><p class="description">' + items[i].getElementsByTagName("description")[0].textContent + '</p>';
+                                                        }
+                                                
+                                                document.getElementById('content').innerHTML=content;
+                                        }
+                                }
+                                xmlhttp.send();
+                        }        
+                </script>
     </head>
+                
+        <script type="text/javascript">window.onload = xmlparser();</script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
     <body>
 
-		<h2 id="titre">SITE DE CIT</h2>
-
-			
+		<h2 id="titre">LFIS Actualité</h2>
 
 				<table class="table1">
-
-					<tr>
 
 					<td width="20%"><h3><a href="index.htm">Information</a></h3></td>
 					<td width="20%" class="td1"><h3><a href="pronote.htm">Pronote</a></h3></td>
@@ -42,29 +59,9 @@
 					<td width="10%" class="td1"><a href="index.htm">francais</a></td>
 					<td width="10%" class="td1"><a href="english.htm">anglais</a></td>
 
-					</tr>
-
 				</table>
-
-				<br>				
-
-			<div id="info">
-
-			<table width="100%"><td width="100%"><h3>Information importante</h3></td></table><hr>
-			<table width="100%"><td width="95%"><h4>Information2</h4>date</td><td width="5%"><img src="arrow.png"/></td></table><hr>
-			<table width="100%"><td width="95%"><h4>Information3</h4>date</td><td width="5%"><img src="arrow.png"/></td></table><hr>
-			<table width="100%"><td width="95%"><h4>Information4</h4>date</td><td width="5%"><img src="arrow.png"/></td></table><hr>
-			<table width="100%"><td width="95%"><h4>Information5</h4>date</td><td width="5%"><img src="arrow.png"/></td></table><hr>
-			<table width="100%"><td width="95%"><h4>Information6</h4>date</td><td width="5%"><img src="arrow.png"/></td></table><hr>
-			<table width="100%"><td width="95%"><h4>Information7</h4>date</td><td width="5%"><img src="arrow.png"/></td></table><hr>
-
-			</div>
-			<br>
+				
+				<div id="content">&nbsp;</div>
 	
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
     </body>
 </html>
