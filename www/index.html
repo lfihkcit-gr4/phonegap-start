@@ -1,16 +1,30 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
 
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<title>cit</title>
-       
-                <script>
+                <title>LFIS</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+                <meta http-equiv="Content-Script-Type" content="text/javascript" />
+				<link rel="stylesheet" type="text/css" href="css/index.css" />
+                
+				<script>
                         // XML PARSER cf. http://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
                         function xmlparser()
                         {
@@ -37,32 +51,26 @@
                                 }
                                 xmlhttp.send();
                         }        
-                </script>
+                </script>	
     </head>
+    <body>
+
+				<p class="eng">en/frlplp</p>
+				
+					<table class="table">
+						<td class="table1">Actualité</td>
+						<td class="table1">Calendrier</td>
+					</table>
+
+                <div id="content">&nbsp;</div>
                 
-        <script type="text/javascript">window.onload = xmlparser();</script>
+                <script type="text/javascript">window.onload = xmlparser();</script>
+				<!--
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
-
-    <body>
-
-		<h2 id="titre">LFIS Actualité</h2>
-
-				<table class="table1">
-
-					<td width="20%"><h3><a href="index.htm">Information</a></h3></td>
-					<td width="20%" class="td1"><h3><a href="pronote.htm">Pronote</a></h3></td>
-					<td width="20%" class="td1"><h3><a href="lfi.htm">Site de l'ecole</a></h3></td>
-					<td width="20%" class="td1"><h3><a href="meteo.htm">Meteo</a></h3></td>
-					<td width="10%" class="td1"><a href="index.htm">francais</a></td>
-					<td width="10%" class="td1"><a href="english.htm">anglais</a></td>
-
-				</table>
-				
-				<div id="content">&nbsp;</div>
-	
+				-->
     </body>
 </html>

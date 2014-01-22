@@ -48,3 +48,30 @@ var app = {
     }
 
 };
+
+// XML PARSER cf. http://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
+function xmlparser()
+{
+        var xmlhttp, xml_data, items, content;
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=fr-fr", true);
+        //xmlhttp.open("GET", "xmlfile.xml", true);
+        xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
+        xmlhttp.onreadystatechange=function()
+        {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                        xml_data = xmlhttp.responseXML;
+                        items = xml_data.getElementsByTagName("item");
+                        
+                        content = '';
+                        for (i=0;i<items.length;i++)
+                                { 
+                                content = content + '<h1 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</h1><p class="description">' + items[i].getElementsByTagName("description")[0].textContent + '</p>';
+                                }
+                        
+                        document.getElementById('content').innerHTML=content;
+                }
+        }
+        xmlhttp.send();
+};
