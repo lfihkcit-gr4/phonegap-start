@@ -131,4 +131,16 @@ img{
 }
 h3{
 	text-align:center;
+	font-weight:normal;
+}
+.boite{
+	width:80%;
+	background-color:#bdc3c7;
+	padding:20px;
+	text-align: center;
+	margin:auto;
+	border-radius:10px;
+}
+a{
+	text-decoration:none;
 }
