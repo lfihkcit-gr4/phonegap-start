@@ -24,8 +24,8 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    /*background-color:red;
+    background-image:linear-gradient(top, red 100%, red 20%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-gradient(
@@ -42,7 +42,8 @@ body {
     margin:0px;
     padding:0px;
     text-transform:uppercase;
-    width:100%;
+    width:100%;*/
+    
 }
 
 /* Portrait layout (default) */
@@ -113,19 +114,58 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+.topbar{
+    /*background-image:url('http://www.thegaptravelguide.com/images/uploads/hong_kong.jpg');
+    background-size:auto 100%;*/
+    position:fixed;
+    top:0%;
+    right:0%;
+    left:0%;
+    bottom:80%;
+    width:100%;
+    height:20%;
+    background-color:red;
+    z-index:1;
+    
+}
+/*
 .eng{
 	text-align:right;
 	color:red;
 	}
+*/
 	
 .table{
 	width:100%;
-	height:100px;
-	border:2px solid black;
-	}
+	height:100%;
+		}
 	
 .table1{
 	width:50%;
 	text-align:center;
-	border:1px solid blue;
 	}
+
+.actu{
+    border-radius:15px;
+    background-color: white;
+    margin:5%;
+    padding:5%;
+}
+#backimg{
+    height:100%;
+    width:100%;
+    position:fixed;
+    top:0%;
+    right:0%;
+    left:0%;
+    bottom:0%;
+    z-index:-1;
+}
+#content{
+    position:absolute;
+    top:20%;
+    left:0%;
+    right:0%;
+    bottom:0%;
+    z-index:0;
+}

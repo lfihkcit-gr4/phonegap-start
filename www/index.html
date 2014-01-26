@@ -43,7 +43,7 @@
                                                 content = '';
                                                 for (i=0;i<items.length;i++)
                                                         { 
-                                                        content = content + '<h1 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</h1><p class="description">' + items[i].getElementsByTagName("description")[0].textContent + '</p>';
+                                                        content = content + '<div class="actu">' + '<h1 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</div>';
                                                         }
                                                 
                                                 document.getElementById('content').innerHTML=content;
@@ -54,17 +54,29 @@
                 </script>	
     </head>
     <body>
+            <div>
 
-				<p class="eng">en/frlplp</p>
-				
-					<table class="table">
-						<td class="table1">Actualité</td>
-						<td class="table1">Calendrier</td>
-					</table>
+                <img src="http://upload.wikimedia.org/wikipedia/commons/b/b3/HK_International_Finance_Centre_200809.jpg" alt="background image of HK" id="backimg" />
+            </div>
 
-                <div id="content">&nbsp;</div>
+            <div class="topbar">
+			 
+			     
+			 	<table class="table">
+                        en/fr
+			 		<td class="table1">Actualité
+                    </td>
+			 		<td class="table1">Calendrier
+                    </td>
+			 	</table>
+            </div>    
+
+                <div id="content">
+                    &nbsp;
+                </div>
                 
                 <script type="text/javascript">window.onload = xmlparser();</script>
+            
 				<!--
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -72,5 +84,6 @@
             app.initialize();
         </script>
 				-->
+            
     </body>
 </html>
