@@ -43,7 +43,11 @@
                                                 content = '';
                                                 for (i=0;i<items.length;i++)
                                                         { 
+<<<<<<< HEAD
                                                         content = content + '<div class="actu">' + '<h1 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</div>';
+=======
+                                                        content = content +'<div class="boite"><h1 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</h1><hr><p class="description">' + items[i].getElementsByTagName("description")[0].textContent + '</p></div><br><hr><br>';
+>>>>>>> d550200378fa5a82ee7c46035860f81d2fd58e28
                                                         }
                                                 
                                                 document.getElementById('content').innerHTML=content;
@@ -54,10 +58,32 @@
                 </script>	
     </head>
     <body>
+<<<<<<< HEAD
             <div>
 
                 <img src="http://upload.wikimedia.org/wikipedia/commons/b/b3/HK_International_Finance_Centre_200809.jpg" alt="background image of HK" id="backimg" />
             </div>
+=======
+					<table id="tab">
+						<td width="33%"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Current_logo_of_FIS.jpg/180px-Current_logo_of_FIS.jpg"/></td>
+						<td width="33%">Titre</td>
+						<td width="33%">lang</td>
+					</table>
+					
+					<table class="bar">
+						<tr>
+							<td class="td1">Actualité</td>
+							<td class="td2">Calendrier</td>
+							<td class="td2">Post-Notes</td>
+						</tr>
+					</table>
+					
+					<br>
+					
+					<h3>Actualitees</h3>
+					<hr>
+					<br>
+>>>>>>> d550200378fa5a82ee7c46035860f81d2fd58e28
 
             <div class="topbar">
 			 
