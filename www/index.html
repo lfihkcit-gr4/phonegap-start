@@ -22,9 +22,9 @@
                 <title>LFIS</title>
                 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
                 <meta http-equiv="Content-Script-Type" content="text/javascript" />
-				<link rel="stylesheet" type="text/css" href="css/index.css" />
+                <link rel="stylesheet" type="text/css" href="css/index.css" />
                 
-				<script>
+                <script>
                         // XML PARSER cf. http://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
                         function xmlparser()
                         {
@@ -43,11 +43,9 @@
                                                 content = '';
                                                 for (i=0;i<items.length;i++)
                                                         { 
-<<<<<<< HEAD
-                                                        content = content + '<div class="actu">' + '<h1 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</div>';
-=======
-                                                        content = content +'<div class="boite"><h1 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</h1><hr><p class="description">' + items[i].getElementsByTagName("description")[0].textContent + '</p></div><br><hr><br>';
->>>>>>> d550200378fa5a82ee7c46035860f81d2fd58e28
+
+                                                        content = content + '<div class="actu">' + '<h2 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</div>';
+
                                                         }
                                                 
                                                 document.getElementById('content').innerHTML=content;
@@ -55,46 +53,44 @@
                                 }
                                 xmlhttp.send();
                         }        
-                </script>	
+                </script>   
     </head>
     <body>
-<<<<<<< HEAD
+
             <div>
 
-                <img src="http://upload.wikimedia.org/wikipedia/commons/b/b3/HK_International_Finance_Centre_200809.jpg" alt="background image of HK" id="backimg" />
+                <!--<img src="http://upload.wikimedia.org/wikipedia/commons/b/b3/HK_International_Finance_Centre_200809.jpg" alt="background image of HK" id="backimg" />-->
+
+                <img src="css/backgrd.jpg" alt="background image of HK" id="backimg" />
             </div>
-=======
-					<table id="tab">
-						<td width="33%"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Current_logo_of_FIS.jpg/180px-Current_logo_of_FIS.jpg"/></td>
-						<td width="33%">Titre</td>
-						<td width="33%">lang</td>
-					</table>
-					
-					<table class="bar">
-						<tr>
-							<td class="td1">Actualité</td>
-							<td class="td2">Calendrier</td>
-							<td class="td2">Post-Notes</td>
-						</tr>
-					</table>
-					
-					<br>
-					
-					<h3>Actualitees</h3>
-					<hr>
-					<br>
->>>>>>> d550200378fa5a82ee7c46035860f81d2fd58e28
+
 
             <div class="topbar">
-			 
-			     
-			 	<table class="table">
-                        en/fr
-			 		<td class="table1">Actualité
-                    </td>
-			 		<td class="table1">Calendrier
-                    </td>
-			 	</table>
+             
+                 
+                <table class="table">
+
+                        <td><img src="img/fislogo2.png" alt="logo fis hk" id="img1"/>
+                        </td>
+                        <td id="table1"><h1><a href="file:///Users/decourcyirelandsamuel/Desktop/phonegap-start/www/index.html">Actualité</a></h1>
+                        </td>
+                        <td id="table2"><h1><a href="">Calendrier</a></h1>
+                        </td>
+
+                        <td>
+                        <a href="file:///Users/decourcyirelandsamuel/Desktop/phonegap-start/www/index.html"> 
+
+                            <img src="http://vector-magz.com/wp-content/uploads/2013/09/french-flag-clip-art.png" alt="FR" id="fran" /> 
+                        </a>
+
+
+                        <a href="file:///Users/decourcyirelandsamuel/Desktop/phonegap-start/www/indexing.html"> 
+                            
+                            <img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png" alt="EN" id="eng" /> 
+                        </a>
+                        </td>
+                    
+                </table>
             </div>    
 
                 <div id="content">
@@ -103,13 +99,13 @@
                 
                 <script type="text/javascript">window.onload = xmlparser();</script>
             
-				<!--
+                <!--
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
-				-->
+                -->
             
     </body>
 </html>

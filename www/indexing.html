@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+                <title>LFIS</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+                <meta http-equiv="Content-Script-Type" content="text/javascript" />
+                <link rel="stylesheet" type="text/css" href="css/index.css" />
+                
+                <script>
+                        // XML PARSER cf. http://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
+                        function xmlparser()
+                        {
+                                var xmlhttp, xml_data, items, content;
+                                xmlhttp=new XMLHttpRequest();
+                                xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=en-gb", true);
+                                //xmlhttp.open("GET", "xmlfile.xml", true);
+                                xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
+                                xmlhttp.onreadystatechange=function()
+                                {
+                                        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                                        {
+                                                xml_data = xmlhttp.responseXML;
+                                                items = xml_data.getElementsByTagName("item");
+                                                
+                                                content = '';
+                                                for (i=0;i<items.length;i++)
+                                                        { 
+
+                                                        content = content + '<div class="actu">' + '<h2 class="title">' + items[i].getElementsByTagName("title")[0].textContent + '</div>';
+
+                                                        }
+                                                
+                                                document.getElementById('content').innerHTML=content;
+                                        }
+                                }
+                                xmlhttp.send();
+                        }        
+                </script>   
+    </head>
+    <body>
+
+            <div>
+
+                <!--<img src="http://upload.wikimedia.org/wikipedia/commons/b/b3/HK_International_Finance_Centre_200809.jpg" alt="background image of HK" id="backimg" />-->
+
+                <img src="css/backgrd.jpg" alt="background image of HK" id="backimg" />
+            </div>
+
+
+            <div class="topbar">
+             
+                 
+                <table class="table">
+
+                        <td><img src="img/fislogo2.png" alt="logo fis hk" id="img1"/>
+                        </td>
+                        <td id="table1"><h1><a href="file:///Users/decourcyirelandsamuel/Desktop/phonegap-start/www/indexing.html">News</a></h1>
+                        </td>
+                        <td id="table2"><h1><a href="">Calendar</a></h1>
+                        </td>
+
+                        <td>
+                        <a href="file:///Users/decourcyirelandsamuel/Desktop/phonegap-start/www/index.html"> 
+
+                            <img src="http://vector-magz.com/wp-content/uploads/2013/09/french-flag-clip-art.png" alt="FR" id="fran" /> 
+                        </a>
+
+
+                        <a href="file:///Users/decourcyirelandsamuel/Desktop/phonegap-start/www/indexing.html"> 
+                            
+                            <img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png" alt="EN" id="eng" /> 
+                        </a>
+                        </td>
+                    
+                </table>
+            </div>    
+
+                <div id="content">
+                    &nbsp;
+                </div>
+                
+                <script type="text/javascript">window.onload = xmlparser();</script>
+            
+                <!--
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+                -->
+            
+    </body>
+</html>
+
